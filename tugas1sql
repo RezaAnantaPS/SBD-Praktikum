@@ -1,0 +1,34 @@
+SET SERVEROUTPUT ON
+--membuat procedure untuk meng-convert celcius(sebagai parameter) ke fahrenheit
+CREATE OR REPLACE PROCEDURE celci_fahrenheit(celcius NUMBER) AS
+        fahrenheit NUMBER(5); --variabel untuk menampung nilai fahrenheit
+BEGIN
+        fahrenheit := 9/5 * celcius + 32; --kalkulasi untuk convert celcius ke fahrenheit
+        --menampilkan hasil
+        DBMS_OUTPUT.PUT_LINE (celcius ||' Celcius = '||fahrenheit|| ' Fahrenheit');
+END;
+
+--membuat procedure untuk meng-convert celcius(sebagai parameter) ke reamur
+CREATE OR REPLACE PROCEDURE celci_reamur(celcius NUMBER) AS
+        reamur NUMBER(5); --variabel untuk menampung nilai reamur
+BEGIN
+        reamur := 4/5 * celcius; --kalkulasi untuk convert celcius ke reamur
+        --menampilkan hasil
+        DBMS_OUTPUT.PUT_LINE (celcius ||' Celcius = '||reamur|| ' Reamur');
+END;
+
+--membuat procedure untuk meng-convert celcius(sebagai parameter) ke kelvin
+CREATE OR REPLACE PROCEDURE celci_kelvin(celcius NUMBER) AS
+        kelvin NUMBER(5); --variabel untuk menampung nilai kelvin
+BEGIN
+        kelvin := celcius + 273; --kalkulasi untuk convert celcius ke kelvin
+        --menampilkan hasil
+        DBMS_OUTPUT.PUT_LINE (celcius ||' Celcius = '||kelvin|| ' Kelvin');
+END;
+
+
+EXECUTE celci_fahrenheit(32); --memanggil dan menjalankan procedure untuk meng-convert celcius(sebagai parameter) ke fahrenheit
+EXECUTE celci_reamur(32); --memanggil dan menjalankan procedure untuk meng-convert celcius(sebagai parameter) ke reamur
+EXECUTE celci_kelvin(32); --memanggil dan menjalankan procedure untuk meng-convert celcius(sebagai parameter) ke kelvin
+
+
