@@ -1,0 +1,28 @@
+SET SERVEROUTPUT ON
+CREATE OR REPLACE PROCEDURE celci_fahrenheit(celcius NUMBER) AS
+        fahrenheit NUMBER(5);
+BEGIN
+        fahrenheit := 9/5 * celcius + 32;
+        DBMS_OUTPUT.PUT_LINE (celcius ||' Celcius = '||fahrenheit|| ' Fahrenheit');
+END;
+
+CREATE OR REPLACE PROCEDURE celci_reamur(celcius NUMBER) AS
+        reamur NUMBER(5);
+BEGIN
+        reamur := 4/5 * celcius;
+        DBMS_OUTPUT.PUT_LINE (celcius ||' Celcius = '||reamur|| ' Reamur');
+END;
+
+CREATE OR REPLACE PROCEDURE celci_kelvin(celcius NUMBER) AS
+        kelvin NUMBER(5);
+BEGIN
+        kelvin := celcius + 273;
+        DBMS_OUTPUT.PUT_LINE (celcius ||' Celcius = '||kelvin|| ' Kelvin');
+END;
+
+
+EXECUTE celci_fahrenheit(32);
+EXECUTE celci_reamur(32);
+EXECUTE celci_kelvin(32);
+
+
